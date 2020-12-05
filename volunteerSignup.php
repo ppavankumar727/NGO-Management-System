@@ -1,11 +1,11 @@
 <?php 
 require_once "pdo.php";
 
- /* if(isset($_POST['cancel'])){
+ if(isset($_POST['cancel'])){
     header('Location: view.php');
     return;
   }
-*/
+
 if ( isset($_POST['username'])  ) {
     if((strlen($_POST['username'])>0)){
     if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['intrests'])&&isset($_POST['date'])&&isset($_POST['city'])&&isset($_POST['phone'])){

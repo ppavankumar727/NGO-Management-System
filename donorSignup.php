@@ -1,11 +1,12 @@
 <?php 
 require_once "pdo.php";
+session_start();
 
- /* if(isset($_POST['cancel'])){
-    header('Location: view.php');
+  if(isset($_POST['Cancel'])){
+    header('Location: index.php');
     return;
   }
-*/
+
 if ( isset($_POST['username'])  ) {
     if((strlen($_POST['username'])>0)){
     if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['address'])&&isset($_POST['city'])&&isset($_POST['phone'])){
@@ -31,6 +32,7 @@ if ( isset($_POST['username'])  ) {
                 ':dn' => $rows2[0]['donor_id'],)
                 );$_fal="Record inserted";
 
+                header('Location: index.php');
         }
     }
 }
