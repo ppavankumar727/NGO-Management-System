@@ -34,7 +34,7 @@ if ( isset($_POST['username'])  ) {
                 );
 
                 $_SESSION['success'] = "Record inserted";
-                header('Location: login/adminLogin.php');
+                header('Location: login/donorLogin.php');
         }
         else{
             $_SESSION['error'] = "everything Is Required";

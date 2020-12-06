@@ -10,6 +10,7 @@ session_start();
 if ( isset($_POST['username'])  ) {
     if((strlen($_POST['username'])>0)){
     if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['city'])&&isset($_POST['phone'])){
+        if((strlen($_POST['name'])>0)&&(strlen($_POST['email'])>0)&&(strlen($_POST['address'])>0)&&(strlen($_POST['city'])>0)&&(strlen($_POST['phone'])>0)){
         $stmt = $pdo->prepare('INSERT INTO admin
         (name,email,city_id,phone) VALUES ( :nm, :em, :ci, :ph)');
             $stmt->execute(array(
@@ -31,30 +32,18 @@ if ( isset($_POST['username'])  ) {
                 ':dn' => $rows2[0]['admin_id'],)
                 );$_fal="Record inserted";
 
-                header('Location: index.php');
+                $_SESSION['success'] = "Record inserted";
+                header('Location: login/adminLogin.php');
 
+            }
+            else{
+                $_SESSION['error'] = "everything Is Required";
+                header("Location: donorSignup.php");  
+                return;         
+            }
         }
     }
 }
-
-/*$_SESSION['success'] = "Record inserted";
-header("Location: view.php");
-return;
-    }else {
-        $_SESSION['error'] = "Mileage and year must be numeric";
-        header("Location: add.php");  
-        return;        
-    }
-}
-else {
-    $_SESSION['error'] = "Make Is Required";
-    header("Location: add.php");  
-    return;         
-}
-
-*/
-
-
 
 $stmt3 = $pdo->query("SELECT * FROM city");
 $rows = $stmt3->fetchAll(PDO::FETCH_ASSOC);
@@ -67,7 +56,13 @@ $rows = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
 
+<?php 
+if(isset($_SESSION['error'])){
+    echo $_SESSION['error'];
+    unset($_SESSION['error']);
 
+}
+?>
     <form method="post">
         <p>	username:
             <input type="text" name="username" size="60"/></p>
