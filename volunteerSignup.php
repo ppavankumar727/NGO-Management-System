@@ -80,11 +80,11 @@ if(isset($_SESSION['error'])){
         <p> City : 
             <select id="city" name="city">
             <?php
-            foreach($rows as $row){
-                echo "<option value = ".$row['city_id'].">";
-                echo htmlentities($row['cname']);
-                echo "</option>";
-            } 
+                foreach($rows as $row){
+                    echo "<option value = ".$row['city_id'].">";
+                    echo htmlentities($row['cname']);
+                    echo "</option>";
+                } 
             ?>
             </select>
             <input type="submit" value="Submit">
