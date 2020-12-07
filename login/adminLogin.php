@@ -24,6 +24,7 @@ if ( isset($_POST['username'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NGO - login</title>
+    <?php include("bootstrap.php"); ?>
 </head>
 <body>
 
@@ -38,8 +39,7 @@ if ( isset($_POST['username'])) {
         unset($_SESSION['error']);
     }
 ?>
-
-    <form action="" method="post">    
+    <form action="" method="post" >    
     <p><label for="username">Username :</label>
     <input type="text" name = "username" id = "username">
     </p>
@@ -49,6 +49,5 @@ if ( isset($_POST['username'])) {
     <p><input type="submit" name="submit">  <input type="submit" name="cancel" value = "cancel"></p>
 
     </form>
-
 </body>
 </html>
