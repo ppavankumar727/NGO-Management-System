@@ -10,7 +10,7 @@ session_start();
 if ( isset($_POST['username'])  ) {
     if((strlen($_POST['username'])>0)){
     if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['city'])&&isset($_POST['phone'])){
-        if((strlen($_POST['name'])>0)&&(strlen($_POST['email'])>0)&&(strlen($_POST['address'])>0)&&(strlen($_POST['city'])>0)&&(strlen($_POST['phone'])>0)){
+        if((strlen($_POST['name'])>0)&&(strlen($_POST['email'])>0)&&(strlen($_POST['city'])>0)&&(strlen($_POST['phone'])>0)){
         $stmt = $pdo->prepare('INSERT INTO admin
         (name,email,city_id,phone) VALUES ( :nm, :em, :ci, :ph)');
             $stmt->execute(array(
@@ -38,7 +38,7 @@ if ( isset($_POST['username'])  ) {
             }
             else{
                 $_SESSION['error'] = "everything Is Required";
-                header("Location: donorSignup.php");  
+                header("Location: adminSignup.php");  
                 return;         
             }
         }

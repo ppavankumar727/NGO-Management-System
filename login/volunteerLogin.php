@@ -1,13 +1,13 @@
 <?php 
-require_once "../pdo.php";
 session_start();
+require_once "../pdo.php";
 if ( isset($_POST['username'])) {
     if((strlen($_POST['username'])>0) && (strlen($_POST['password'])>=0)){
-        $stmt3 = $pdo->query("SELECT `login_id` FROM `donor_login` WHERE USERNAME = '".$_POST['username']."' AND PASSWORD ='".$_POST['password']."'");
+        $stmt3 = $pdo->query("SELECT `login_id` FROM `volunteer_login` WHERE USERNAME = '".$_POST['username']."' AND PASSWORD ='".$_POST['password']."'");
         $rows2 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
         if(count($rows2)>=1){
            $_SESSION['username']=$rows2[0]['username'];
-           $_SESSION['role']= 1;
+           $_SESSION['role']= 3;
            header("Location:../index.php");
            return;
         } else {
@@ -17,10 +17,6 @@ if ( isset($_POST['username'])) {
         } 
     }
 }
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
