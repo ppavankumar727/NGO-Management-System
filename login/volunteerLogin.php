@@ -6,7 +6,7 @@ if ( isset($_POST['username'])) {
         $stmt3 = $pdo->query("SELECT `login_id` FROM `volunteer_login` WHERE USERNAME = '".$_POST['username']."' AND PASSWORD ='".$_POST['password']."'");
         $rows2 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
         if(count($rows2)>=1){
-           $_SESSION['username']=$rows2[0]['username'];
+           $_SESSION['login_id']=$rows2[0]['login_id'];
            $_SESSION['role']= 3;
            header("Location:../index.php");
            return;

@@ -14,6 +14,9 @@ session_start();
 <?php
     if(isset($_SESSION['role'])){
         echo "<a href='logout.php'>Logout</a>";
+        echo "<p>".$_SESSION['username']."</p>";
+        echo "<p>".$_SESSION['role']."</p>";
+
 }
  ?>
 </body>
