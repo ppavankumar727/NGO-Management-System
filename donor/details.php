@@ -27,7 +27,7 @@ if ((isset($_POST['bank'])) && (isset($_POST['ifsc_code']))&& (isset($_POST['aco
     }
     else {
         $_SESSION['error']="All fields requred";
-        header("Location: donorLogin.php");
+        header("Location: details.php");
         return;
    }
 }
