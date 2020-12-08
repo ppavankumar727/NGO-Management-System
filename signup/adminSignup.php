@@ -3,7 +3,7 @@ require_once "pdo.php";
 session_start();
 
  if(isset($_POST['cancel'])){
-    header('Location: index.php');
+    header('Location: ../index.php');
     return;
   }
 
@@ -33,7 +33,7 @@ if ( isset($_POST['username'])  ) {
                 );$_fal="Record inserted";
 
                 $_SESSION['success'] = "Record inserted";
-                header('Location: login/adminLogin.php');
+                header('Location: ../login/adminLogin.php');
 
             }
             else{

@@ -2,7 +2,7 @@
 require_once "pdo.php";
 session_start();
  if(isset($_POST['cancel'])){
-    header('Location: view.php');
+    header('Location: ../index.php');
     return;
   }
 
@@ -34,7 +34,7 @@ if ( isset($_POST['username'])  ) {
                 );$_fal="Record inserted";
 
                 $_SESSION['success'] = "Record inserted";
-                header('Location: login/volunteerLogin.php');
+                header('Location: ../login/volunteerLogin.php');
             }
             else{
                 $_SESSION['error'] = "everything Is Required";
