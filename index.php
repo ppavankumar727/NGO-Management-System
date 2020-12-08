@@ -1,6 +1,7 @@
 <?php 
 
 session_start();
+require_once "./pdo.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +13,15 @@ session_start();
 </head>
 <body>
 <?php
+    if(isset($_SESSION['success'])){
+        echo $_SESSION['success'];
+        unset ($_SESSION['success']);
+    }
+
+    if(isset($_SESSION['error'])){
+        echo $_SESSION['error'];
+        unset($_SESSION['error']);
+    }
 if(isset($_SESSION['volunteer_id'])){
         echo "<a href='logout.php'>Logout</a>";
         echo "<br>";
@@ -21,12 +31,13 @@ if(isset($_SESSION['volunteer_id'])){
 }
 else if(isset($_SESSION['admin_id'])){
     echo "<a href='logout.php'>Logout</a>";
-    echo "<br>";
-    echo "<a href='donor/tasks.php'>details</a>";
-    echo "<p>".$_SESSION['role']."</p>";
+    require_once "./adminIndex.php";
+
 }
 else if(isset($_SESSION['donor_id'])){
     echo "<a href='logout.php'>Logout</a>";
+    echo "<a href='donor/donateitems.php'>Items</a>";
+    echo "<a href='donor/donateMoney.php'>Money</a>";
     echo "<br>";
     echo "<a href='donor/details.php'>details</a>";
     echo "<p>".$_SESSION['role']."</p>";

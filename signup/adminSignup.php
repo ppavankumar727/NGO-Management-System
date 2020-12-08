@@ -1,5 +1,5 @@
 <?php 
-require_once "pdo.php";
+require_once "../pdo.php";
 session_start();
 
  if(isset($_POST['cancel'])){
