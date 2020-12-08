@@ -4,6 +4,10 @@ session_start();
 if(!isset($_SESSION['donor_id'])){
     die("Login first");
 }
+if(isset($_POST['cancel'])){
+    header('Location: ../index.php');
+    return;
+}
 
 require_once "../pdo.php";
 if ((isset($_POST['bank'])) && (isset($_POST['ifsc_code']))&& (isset($_POST['acount']))&& (isset($_POST['donation']))){

@@ -25,6 +25,12 @@ else if(isset($_SESSION['admin_id'])){
     echo "<a href='donor/tasks.php'>details</a>";
     echo "<p>".$_SESSION['role']."</p>";
 }
+else if(isset($_SESSION['donor_id'])){
+    echo "<a href='logout.php'>Logout</a>";
+    echo "<br>";
+    echo "<a href='donor/details.php'>details</a>";
+    echo "<p>".$_SESSION['role']."</p>";
+}
 else {
     require_once "./navbar.php";
 }

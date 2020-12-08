@@ -5,6 +5,10 @@ require_once "../pdo.php";
 if(!isset($_SESSION['volunteer_id'])){
     die("Login first");
 }
+if(isset($_POST['cancel'])){
+    header('Location: ../index.php');
+    return;
+}
 
 require_once "../pdo.php";
 if (isset($_POST['task'])){
