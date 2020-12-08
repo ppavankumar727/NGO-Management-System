@@ -3,10 +3,10 @@ session_start();
 require_once "../pdo.php";
 if ( isset($_POST['username'])) {
     if((strlen($_POST['username'])>0) && (strlen($_POST['password'])>=0)){
-        $stmt3 = $pdo->query("SELECT `login_id` FROM `admin_login` WHERE USERNAME = '".$_POST['username']."' AND PASSWORD ='".$_POST['password']."'");
+        $stmt3 = $pdo->query("SELECT `admin_id` FROM `admin_login` WHERE USERNAME = '".$_POST['username']."' AND PASSWORD ='".$_POST['password']."'");
         $rows2 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
         if(count($rows2)>=1){
-           $_SESSION['login_id']=$rows2[0]['login_id'];
+           $_SESSION['admin_id']=$rows2[0]['admin_id'];
            $_SESSION['role']= 2;
            header("Location:../index.php");
            return;
