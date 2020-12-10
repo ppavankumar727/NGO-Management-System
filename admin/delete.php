@@ -30,7 +30,7 @@ return;
 <body>
     <div>
         <form action="" method="post">
-        <p>Are You You Want To DELETE
+        <p>Are You Sure Want To DELETE
         <br>
         <input type="submit" name ="submit"value="Submit">
             <input type="submit" name="cancel" value="Cancel"></p>
