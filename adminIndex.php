@@ -15,22 +15,141 @@
   </div>
 </nav>
 
-<?php 
-$stmt3 = $pdo->query("SELECT ngo_account.donor_id , donor.name , ngo_account.donationS FROM donor JOIN ngo_account WHERE donor.donor_id = ngo_account.donor_id");
-$rows = $stmt3->fetchAll(PDO::FETCH_ASSOC);
-?>
-<div class="container">
-<p>Donors are</p>
-<ol>
-<?php 
-foreach($rows as $row){
-    echo "<li>";
-    echo htmlentities($row['name']);
-    echo " ".htmlentities($row['donationS']);
-    echo(" <a href='admin/delete.php?donor_id=".$row['donor_id']."'>Delete</a>");
+<div class="container  rounded"> 
+  <div>
+    <?php 
+     $stmt3 = $pdo->query("SELECT SUM(donationS)FROM ngo_account");
+     $rows = $stmt3->fetchAll(PDO::FETCH_ASSOC);
+     echo "<h2 class='shadow-lg p-3 mb-5 bg-light rounded mx-auto' style='width: 500px;'>The Overall Donations Are ₹ ".$rows[0]['SUM(donationS)']." </h2>" ;
+    ?>
+  </div> 
+  <div class = "row ">
+    <div class="col-6 "><h3>Bengaluru Donors</h3></div>
+    <div class="col-6"><h3>Hyderabad Donors</h3></div>
+  </div>
+  <div class = "row ">
+    <div class="col-6">
+      <table class="table shadow-lg p-3 mb-5 bg-light rounded ">
+        <thead class="thead-dark">
+          <tr class="">
+            <th class="" scope="col">Sno </th>
+            <th class="" scope="col">Donor Name</th>
+            <th class="" scope="col">Donation</th>
+            <th class="" scope = "col">     </th> 
+          </tr>
+        </thead>
+        <tbody class="">
+           <?php 
+             $stmt3 = $pdo->query("SELECT ngo_account.donor_id , donor.name , ngo_account.donationS FROM donor JOIN ngo_account WHERE donor.donor_id = ngo_account.donor_id AND ngo_account.city_id = 1");
+             $rows = $stmt3->fetchAll(PDO::FETCH_ASSOC);
+             $count = 1;
+              foreach($rows as $row){
+                echo "<tr class=''>";
+                echo "<th scope='row' class=''>".$count."</th>";
+                echo "<td class=''>".htmlentities($row['name'])."</td>";
+                echo "<td class='' >".htmlentities($row['donationS'])." </td>";
+                echo("<td class='' > <a href='admin/delete.php?donor_id=".$row['donor_id']."'>Remove Donor</a></td>");
+                echo "</tr>";
+              $count++;
+              }
+            ?>
+        </tbody>
+      </table>
+   </div>
+   <div class="col-6">
+      <table class="table shadow-lg p-3 mb-5 bg-light rounded ">
+        <thead class="thead-dark">
+          <tr class="">
+            <th class="" scope="col">Sno </th>
+            <th class="" scope="col">Donor Name</th>
+            <th class="" scope="col">Donation</th>
+            <th class="" scope = "col">     </th> 
+          </tr>
+        </thead>
+        <tbody class="">
+           <?php 
+             $stmt3 = $pdo->query("SELECT ngo_account.donor_id , donor.name , ngo_account.donationS FROM donor JOIN ngo_account WHERE donor.donor_id = ngo_account.donor_id AND ngo_account.city_id = 2");
+             $rows = $stmt3->fetchAll(PDO::FETCH_ASSOC);
+             $count = 1;
+              foreach($rows as $row){
+                echo "<tr class=''>";
+                echo "<th scope='row' class=''>".$count."</th>";
+                echo "<td class=''>".htmlentities($row['name'])."</td>";
+                echo "<td class='' >".htmlentities($row['donationS'])." </td>";
+                echo("<td class='' > <a href='admin/delete.php?donor_id=".$row['donor_id']."'>Remove Donor</a></td>");
+                echo "</tr>";
+              $count++;
+              }
+            ?>
+        </tbody>
+      </table>
+   </div>
+     
+   </div>
+   <div class = "row">
+    <div class="col-6"><h3>Chennai Donors</h3></div>
+    <div class="col-6"><h3>Mumbai Donors</h3></div>
 
-    echo "</li>";
-}
-?>
-</ul>
+  </div>
+   <div class = "row">
+    <div class="col-6">
+      <table class="table shadow-lg p-3 mb-5 bg-light rounded ">
+        <thead class="thead-dark">
+          <tr class="">
+            <th class="" scope="col">Sno </th>
+            <th class="" scope="col">Donor Name</th>
+            <th class="" scope="col">Donation</th>
+            <th class="" scope = "col">     </th> 
+          </tr>
+        </thead>
+        <tbody class="">
+           <?php 
+             $stmt3 = $pdo->query("SELECT ngo_account.donor_id , donor.name , ngo_account.donationS FROM donor JOIN ngo_account WHERE donor.donor_id = ngo_account.donor_id AND ngo_account.city_id = 3");
+             $rows = $stmt3->fetchAll(PDO::FETCH_ASSOC);
+             $count = 1;
+              foreach($rows as $row){
+                echo "<tr class=''>";
+                echo "<th scope='row' class=''>".$count."</th>";
+                echo "<td class=''>".htmlentities($row['name'])."</td>";
+                echo "<td class='' >".htmlentities($row['donationS'])." </td>";
+                echo("<td class='' > <a href='admin/delete.php?donor_id=".$row['donor_id']."'>Remove Donor</a></td>");
+                echo "</tr>";
+              $count++;
+              }
+            ?>
+        </tbody>
+      </table>
+   </div>
+   <div class="col-6">
+      <table class="table shadow-lg p-3 mb-5 bg-light rounded ">
+        <thead class="thead-dark">
+          <tr class="">
+            <th class="" scope="col">Sno </th>
+            <th class="" scope="col">Donor Name</th>
+            <th class="" scope="col">Donation</th>
+            <th class="" scope = "col">     </th> 
+          </tr>
+        </thead>
+        <tbody class="">
+           <?php 
+             $stmt3 = $pdo->query("SELECT ngo_account.donor_id , donor.name , ngo_account.donationS FROM donor JOIN ngo_account WHERE donor.donor_id = ngo_account.donor_id AND ngo_account.city_id = 4");
+             $rows = $stmt3->fetchAll(PDO::FETCH_ASSOC);
+             $count = 1;
+              foreach($rows as $row){
+                echo "<tr class=''>";
+                echo "<th scope='row' class=''>".$count."</th>";
+                echo "<td class=''>".htmlentities($row['name'])."</td>";
+                echo "<td class='' >".htmlentities($row['donationS'])." </td>";
+                echo("<td class='' > <a href='admin/delete.php?donor_id=".$row['donor_id']."'>Remove Donor</a></td>");
+                echo "</tr>";
+              $count++;
+              }
+            ?>
+        </tbody>
+      </table>
+   </div>
+     
+   </div>   
+  </div>
+
 </div>    
