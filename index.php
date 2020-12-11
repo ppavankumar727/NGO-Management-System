@@ -32,7 +32,6 @@ if(isset($_SESSION['volunteer_id'])){
 
 }
 else if(isset($_SESSION['admin_id'])){
-    echo "<a href='logout.php'>Logout</a>";
     require_once "./adminIndex.php";
 
 }
@@ -46,6 +45,7 @@ else if(isset($_SESSION['donor_id'])){
 }
 else {
     require_once "./navbar.php";
+    require_once "./carousel.php";
 }
  ?>
  
