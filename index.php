@@ -36,12 +36,14 @@ else if(isset($_SESSION['admin_id'])){
 
 }
 else if(isset($_SESSION['donor_id'])){
-    echo "<a href='logout.php'>Logout</a>";
+    require_once "donorIndex.php";
+   
     echo "<a href='donor/donateitems.php'>Items</a>";
     echo "<a href='donor/donateMoney.php'>Money</a>";
     echo "<br>";
     echo "<a href='donor/details.php'>details</a>";
     echo "<p>".$_SESSION['role']."</p>";
+    
 }
 else {
     require_once "./navbar.php";
