@@ -34,16 +34,14 @@
 
         }
             else {
-
-            echo ' 
-                <div class="jumbotron col-6">
-                    <h2 class="display-4">Hello, Donor!</h2>
-                    <h1 class="display-5">Fill Your details To donate now </h1>
-                    <hr class="my-4">
-                    <p>Click The Button Below</p>
-                    <a class="btn btn-primary btn-lg" href="donor/details.php" role="button">Fill Details</a>
-                </div> 
-            ';
+              echo " <div class='col-6'>";
+            
+              echo "<h2 class='shadow-lg p-3 mb-5 bg-light rounded '>Fill Your Details To Donate </h2>";
+              echo "</div>";
+              echo " <div class='col-6'>";
+  
+              echo "<a class='btn btn-primary btn-lg shadow-lg p-3 mb-5 rounded ' style='width: 400px;' href='donor/details.php' role='button'>Fill Details</a>";
+              echo "</div>";
         }
         
         ?>
