@@ -25,11 +25,7 @@ require_once "./pdo.php";
         unset($_SESSION['error']);
     }
 if(isset($_SESSION['volunteer_id'])){
-        echo "<a href='logout.php'>Logout</a>";
-        echo "<br>";
-        echo "<a href='volunteer/tasks.php'>details</a>";
-        echo "<p>".$_SESSION['role']."</p>";
-
+        require_once "volunteerIndex.php";
 }
 else if(isset($_SESSION['admin_id'])){
     require_once "./adminIndex.php";
@@ -39,10 +35,7 @@ else if(isset($_SESSION['donor_id'])){
     require_once "donorIndex.php";
    
     echo "<a href='donor/donateitems.php'>Items</a>";
-    echo "<a href='donor/donateMoney.php'>Money</a>";
     echo "<br>";
-    echo "<a href='donor/details.php'>details</a>";
-    echo "<p>".$_SESSION['role']."</p>";
     
 }
 else {

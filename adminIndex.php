@@ -20,7 +20,7 @@
     <?php 
      $stmt3 = $pdo->query("SELECT SUM(donationS)FROM ngo_account");
      $rows = $stmt3->fetchAll(PDO::FETCH_ASSOC);
-     echo "<h2 class='shadow-lg p-3 mb-5 bg-light rounded mx-auto' style='width: 500px;'>The Overall Donations Are ₹ ".$rows[0]['SUM(donationS)']." </h2>" ;
+     echo "<h2 class='shadow-lg p-3 mb-5 bg-light rounded mx-auto' style='width: 550px;'>The Overall Donations Are ₹ ".$rows[0]['SUM(donationS)']." </h2>" ;
     ?>
   </div> 
   <div class = "row ">
