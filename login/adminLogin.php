@@ -28,9 +28,11 @@ if ( isset($_POST['username'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NGO - login</title>
+    <link rel="stylesheet" href="../bootstrap/css/style.css">
     <?php include("bootstrap.php"); ?>
+ 
 </head>
-<body>
+<body class="text-center">
 
 <?php
     if(isset($_SESSION['success'])){
@@ -43,14 +45,17 @@ if ( isset($_POST['username'])) {
         unset($_SESSION['error']);
     }
 ?>
-    <form action="" method="post" >    
-    <p><label for="username">Username :</label>
+    <form class="form-signin"  method="post" >  
+        <img class="mb-4" src="../images/index/logo.png" alt="" width="72" height="72">
+        <h3 class="h3 mb-3 font-weight-normal">Admin Login</h3>  
+
+    <p><label for="username" >Username :</label>
     <input type="text" name = "username" id = "username">
     </p>
-    <p><label for="password">Password :</label>
-    <input type="password" name = "password" id ="password">
+    <p><label  for="password">Password :</label>
+    <input type="password"  name = "password" id ="password">
     </p>
-    <p><input type="submit" name="submit">  <input type="submit" name="cancel" value = "cancel"></p>
+    <p><input type="submit" class="btn btn-lg btn-primary btn-bloc" name="submit">  <input type="submit" class="btn btn-lg btn-primary btn-bloc" name="cancel" value = "cancel"></p>
 
     </form>
     <a class="btn btn-secondary" href="../signup/adminSignup.php" role="button">Sign UP »</a>

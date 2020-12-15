@@ -30,7 +30,7 @@ if ( isset($_POST['username'])) {
     <title>NGO - login</title>
     <?php include("bootstrap.php"); ?>
 </head>
-<body>
+<body class="text-center">
 
 <?php
     if(isset($_SESSION['success'])){
@@ -43,14 +43,17 @@ if ( isset($_POST['username'])) {
     }
 ?>
 
-    <form action="" method="post">    
+    <form action="" class="form-signin" method="post">    
+    <img class="mb-4" src="../images/index/logo.png" alt="" width="72" height="72">   
+    <h3 class="h3 mb-3 font-weight-normal">Volunteer Login</h3>  
+
     <p><label for="username">Username :</label>
     <input type="text" name = "username" id = "username">
     </p>
     <p><label for="password">Password :</label>
     <input type="password" name = "password" id ="password">
     </p>
-    <p><input type="submit" name="submit">  <input type="submit" name="cancel" value = "cancel"></p>
+    <p><input type="submit" class="btn btn-lg btn-primary btn-bloc" name="submit">  <input type="submit" class="btn btn-lg btn-primary btn-bloc" name="cancel" value = "cancel"></p>
 
     </form>
     <a class="btn btn-secondary" href="../signup/volunteerSignup.php" role="button">Sign UP »</a>
