@@ -47,7 +47,7 @@ if ((isset($_POST['bank'])) && (isset($_POST['ifsc_code']))&& (isset($_POST['aco
     <title>Donor DetailForm</title>
     <?php include("bootstrap.php");?>
 </head>
-<body>
+<body  class="text-center">
 <?php
     if(isset($_SESSION['success'])){
         echo $_SESSION['success'];
@@ -60,8 +60,9 @@ if ((isset($_POST['bank'])) && (isset($_POST['ifsc_code']))&& (isset($_POST['aco
     }
 ?>
 
-    <h1>Enter Your Details</h1>
-    <form method="post">
+    <form  class="form-signin" method="post">
+    <h1 class="h3 mb-3 font-weight-normal">Enter Your Details</h1>
+
         <p>	bank:
             <input type="text" name="bank" size="60"/></p>
         <p>	ifsc_code:
@@ -72,8 +73,8 @@ if ((isset($_POST['bank'])) && (isset($_POST['ifsc_code']))&& (isset($_POST['aco
         <p>Initial Donation:
             <input type="number" value=0 name="donation" size="60"/></p>
         </p>
-            <input type="submit" value="Submit">
-            <input type="submit" name="cancel" value="Cancel">
+            <input type="submit" class="btn btn-lg btn-primary btn-bloc" value="Submit">
+            <input type="submit" class="btn btn-lg btn-primary btn-bloc" name="cancel" value="Cancel">
     </form>
 </body>
 </html>

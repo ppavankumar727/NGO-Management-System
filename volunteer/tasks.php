@@ -41,7 +41,7 @@ if (isset($_POST['task'])){
     <title>volunteer  tasks</title>
     <?php include("bootstrap.php");?>
 </head>
-<body>
+<body  class="text-center">
 <?php
     if(isset($_SESSION['success'])){
         echo $_SESSION['success'];
@@ -54,12 +54,13 @@ if (isset($_POST['task'])){
     }
 ?>
 
-    <h1>Enter Task</h1>
     <form method="post">
+    <h3 class="h3 mb-3 font-weight-normal">Enter Task</h3>
+
         <p>	task:
             <input type="text" name="task" size="60"/></p>
-            <input type="submit" value="Submit">
-            <input type="submit" name="cancel" value="Cancel">
+            <input type="submit" class="btn btn-lg btn-primary btn-bloc" value="Submit">
+            <input type="submit" class="btn btn-lg btn-primary btn-bloc" name="cancel" value="Cancel">
     </form>
 </body>
 </html>

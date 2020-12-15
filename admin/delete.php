@@ -26,14 +26,16 @@ return;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <?php include("bootstrap.php"); ?>
+
 </head>
-<body>
+<body  class="text-center">
     <div>
-        <form action="" method="post">
-        <p>Are You Sure Want To DELETE
-        <br>
-        <input type="submit" name ="submit"value="Submit">
-            <input type="submit" name="cancel" value="Cancel"></p>
+        <form class="form-signin" action="" method="post">
+        <h1>Are You Sure Want To DELETE</h1>
+                <br>
+        <input type="submit" class="btn btn-lg btn-primary btn-bloc" name ="submit"value="Yes">
+            <input type="submit" class="btn btn-lg btn-primary btn-bloc" name="cancel" value="Cancel"></p>
         </form>
     </div>
 </body>

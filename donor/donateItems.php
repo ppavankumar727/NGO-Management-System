@@ -42,7 +42,7 @@ if ((isset($_POST['item']))){
     <title>Items Donate</title>
     <?php include("bootstrap.php");?>
 </head>
-<body>
+<body  class="text-center">
 <?php
     if(isset($_SESSION['success'])){
         echo $_SESSION['success'];
@@ -55,13 +55,14 @@ if ((isset($_POST['item']))){
     }
 ?>
 
-    <h1>Insert Items</h1>
-    <form method="post">
+    
+    <form  class="form-signin" method="post">
+    <h1 class="h3 mb-3 font-weight-normal">Insert Items</h1>
         <p> Donation Amount :
             <input type="text"  name="item"/></p>
         </p>
-            <input type="submit" value="Submit">
-            <input type="submit" name="cancel" value="cancel">
+            <input type="submit" class="btn btn-lg btn-primary btn-bloc" value="Submit">
+            <input type="submit" class="btn btn-lg btn-primary btn-bloc" name="cancel" value="cancel">
     </form>
 </body>
 </html>
