@@ -3,7 +3,7 @@ require_once "../pdo.php";
 session_start();
 
   if(isset($_POST['Cancel'])){
-    header('Location: ../index.php');
+    header('Location: ../login/donorLogin.php');
     return;
   }
 
@@ -87,7 +87,7 @@ if(isset($_SESSION['error'])){
             ?>
             </select>
             <input type="submit" value="Submit">
-            <input type="submit" name="cancel" value="Cancel">
+            <input type="submit" name="Cancel" value="Cancel">
     </form>
 </body>
 </html>

@@ -3,7 +3,7 @@ require_once "../pdo.php";
 session_start();
 
  if(isset($_POST['cancel'])){
-    header('Location: ../index.php');
+    header('Location: ../login/adminLogin.php');
     return;
   }
 

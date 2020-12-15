@@ -3,7 +3,9 @@
  <br>
 </div>
 <div class="row shadow-lg p-3 mb-5 bg-dark rounded">
-<div class="col-3"></div>
+
+  <img class="col-3" src="images/index/logo.png"  alt="">
+
 <div id="carouselExampleIndicators" class="carousel slide col-6" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -30,6 +32,5 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-<div class="col-3"></div>
-</div>
+<img class="col-3" src="images/index/logo.png"  alt="">
 </div>

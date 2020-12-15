@@ -53,6 +53,8 @@ if ( isset($_POST['username'])) {
     <p><input type="submit" name="submit">  <input type="submit" name="cancel" value = "cancel"></p>
 
     </form>
+    <a class="btn btn-secondary" href="../signup/volunteerSignup.php" role="button">Sign UP »</a>
+
 
 </body>
 </html>
