@@ -15,6 +15,16 @@
   </div>
 </nav>
 <div class="container">
+    <div class="row">
+      <div class="col-2">
+        </div>  
+        <div class="col-8">
+            <img src="images/index/donate.jpg"alt="" class="col-12" >
+        </div>
+        <div class="col-2">
+        </div>
+    </div>
+    <br>
 
     <div class="row">
         
@@ -36,7 +46,7 @@
             else {
               echo " <div class='col-6'>";
             
-              echo "<h2 class='shadow-lg p-3 mb-5 bg-light rounded '>Fill Your Details To Donate </h2>";
+              echo "<h2 class='shadow-lg p-3 mb-5 bg-light rounded '>Fill Your Details To Donate Money </h2>";
               echo "</div>";
               echo " <div class='col-6'>";
   
@@ -46,20 +56,42 @@
         
         ?>
         </div> 
-    </div>
     <div class="row">
-      <div class="col-2">
-        </div>  
-        <div class="col-8">
-            <img src="images/index/donate.jpg"alt="" class="col-12" >
+       <div class='col-6'>
+          <h2 class='shadow-lg p-3 mb-5 bg-light rounded '>Donate Items Here </h2>  
         </div>
-        <div class="col-2">
+        <div class='col-6'>
+          <a class='btn btn-primary btn-lg shadow-lg p-3 mb-5 rounded ' style='width: 400px;' href='donor/donateItems.php' role='button'>Donate</a>
         </div>
     </div>
-<br>
-    <div class="row">
     
-
-
-    </div>
+    <div class="row" >
+      <div class="col-3"></div>
+    <div class="col-6">
+      <table class="table shadow-lg p-3 mb-5 bg-light rounded ">
+        <h2>ITEMS YOU DONATED</h2>
+        <thead class="thead-dark">
+          <tr class="">
+            <th class="" scope="col">Sno </th>
+            <th class="" scope="col">item Name</th>
+          </tr>
+        </thead>
+        <tbody class="">
+           <?php 
+             $stmt3 = $pdo->query("SELECT * FROM `items` WHERE `donor_id`=".$_SESSION['donor_id']);
+             $rows = $stmt3->fetchAll(PDO::FETCH_ASSOC);
+             $count = 1;
+              foreach($rows as $row){
+                echo "<tr class=''>";
+                echo "<th scope='row' class=''>".$count."</th>";
+                echo "<td class=''>".htmlentities($row['item'])."</td>";
+                echo "</tr>";
+              $count++;
+              }
+            ?>
+        </tbody>
+      </table>
+   </div>
+   <div class="col-3"></div>
+  </div>
 </div>
