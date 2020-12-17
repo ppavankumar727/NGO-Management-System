@@ -8,8 +8,29 @@ session_start();
 
 if ( isset($_POST['username'])  ) {
     if((strlen($_POST['username'])>0)){
+        $stmt5 = $pdo->query("SELECT `username` FROM `volunteer_login` WHERE `username`= '".$_POST['username']."';");
+        $rows5 = $stmt5->fetchAll(PDO::FETCH_ASSOC);
+        if(count($rows5)>0){
+            $_SESSION['error'] = "Username Already Exist Chose a different username";
+            header('Location: donorSignup.php');
+            return;
+        }
     if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['intrests'])&&isset($_POST['date'])&&isset($_POST['city'])&&isset($_POST['phone'])){
         if((strlen($_POST['name'])>0)&&(strlen($_POST['email'])>0)&&(strlen($_POST['date'])>0)&&(strlen($_POST['intrests'])>0)&&(strlen($_POST['city'])>0)&&(strlen($_POST['phone'])>0)){
+            $stmt5 = $pdo->query("SELECT `email` FROM `volunteer` WHERE `email`= '".$_POST['email']."';");
+            $rows5 = $stmt5->fetchAll(PDO::FETCH_ASSOC);
+            if(count($rows5)>0){
+                $_SESSION['error'] = "email Already Exist Chose a different email";
+                header('Location: donorSignup.php');
+                return;
+            }
+            $stmt5 = $pdo->query("SELECT `phone` FROM `volunteer` WHERE `phone`= ".$_POST['phone'].";");
+            $rows5 = $stmt5->fetchAll(PDO::FETCH_ASSOC);
+            if(count($rows5)>0){
+                $_SESSION['error'] = "phone number Already Exist Chose a different phone";
+                header('Location: donorSignup.php');
+                return;
+            }
         $stmt = $pdo->prepare('INSERT INTO volunteer
         (name,email,intrests,dob ,city_id,phone) VALUES ( :nm, :em, :inn, :db, :ci, :ph)');
             $stmt->execute(array(
@@ -19,11 +40,17 @@ if ( isset($_POST['username'])  ) {
             ':db' => $_POST['date'],
             ':ci' => $_POST['city'],
             ':ph' => $_POST['phone'])
-            );$_fal="Record inserted";
+            );
     
 
-            $stmt3 = $pdo->query("SELECT * FROM `volunteer` WHERE `name` = '".$_POST['name']."'");
+            $stmt3 = $pdo->query("SELECT * FROM `volunteer` WHERE `volunteer_id`= (SELECT MAX(`volunteer_id`) FROM `volunteer`)");
             $rows2 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
+            if(($_POST['email']!=$rows2[0]['email'])||($_POST['phone']!=$rows2[0]['phone'])){
+                $_SESSION['error']="Something went wrong please try again";
+                header('Location: volunteerSignup');
+                return;
+            }
+
 
 
             $stmt1 = $pdo->prepare('INSERT INTO volunteer_login(username,password,volunteer_id) VALUES ( :ur, :pw, :dn)');
