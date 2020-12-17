@@ -9,6 +9,13 @@
         <a class="nav-link" href="#">Donor<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item ">
+        <a class="nav-link" href="logout.php"><?php 
+          $stmt3 = $pdo->query("SELECT `name` FROM `donor` WHERE `donor_id` =".$_SESSION['donor_id']);
+          $rows2 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
+          echo $rows2[0]['name'];
+        ?><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item ">
         <a class="nav-link" href="logout.php">Logout<span class="sr-only">(current)</span></a>
       </li>
     </ul>
@@ -39,7 +46,10 @@
             echo "</div>";
             echo " <div class='col-6'>";
 
-            echo "<a class='btn btn-primary btn-lg shadow-lg p-3 mb-5 rounded ' style='width: 400px;' href='donor/donateMoney.php' role='button'>Donate</a>";
+            echo "<a class='btn btn-primary btn-lg shadow-lg p-3 mb-5 rounded ' style='width: 200px;' href='donor/donateMoney.php' role='button'>Donate</a>";
+            echo "<pre style = 'display : inline'> </pre>";
+            echo "<a class='btn btn-primary btn-lg shadow-lg p-3 mb-5 rounded ' style='width: 195px;' href='donor/transactions.php' role='button'>Check Transctions</a>";
+
             echo "</div>";
 
         }

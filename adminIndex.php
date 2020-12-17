@@ -9,6 +9,13 @@
         <a class="nav-link" href="#">Admin<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item ">
+        <a class="nav-link" href="logout.php"><?php 
+          $stmt3 = $pdo->query("SELECT `name` FROM `admin` WHERE `admin_id` =".$_SESSION['admin_id']);
+          $rows2 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
+          echo $rows2[0]['name'];
+        ?><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item ">
         <a class="nav-link" href="logout.php">Logout<span class="sr-only">(current)</span></a>
       </li>
     </ul>

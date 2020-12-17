@@ -18,7 +18,7 @@ if ( isset($_POST['username'])  ) {
             ':em' => $_POST['email'],
             ':ci' => $_POST['city'],
             ':ph' => $_POST['phone'])
-            );$_fal="Record inserted";
+            );
     
 
             $stmt3 = $pdo->query("SELECT * FROM `admin` WHERE `name` = '".$_POST['name']."'");
