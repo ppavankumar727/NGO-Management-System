@@ -25,6 +25,13 @@ if(!isset($_SESSION['donor_id'])){
              <a class="nav-link" href="../index.php">Donor<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item ">
+        <a class="nav-link" href="logout.php"><?php 
+          $stmt3 = $pdo->query("SELECT `name` FROM `donor` WHERE `donor_id` =".$_SESSION['donor_id']);
+          $rows2 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
+          echo $rows2[0]['name'];
+        ?><span class="sr-only">(current)</span></a>
+        </li>
+            <li class="nav-item ">
                 <a class="nav-link" href="../logout.php">Logout<span class="sr-only">(current)</span></a>
             </li>
             </ul>

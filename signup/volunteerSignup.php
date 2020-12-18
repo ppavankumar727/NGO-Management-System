@@ -57,7 +57,7 @@ if ( isset($_POST['username'])  ) {
                 ':ur' => $_POST['username'],
                 ':pw' => $_POST['password'],
                 ':dn' => $rows2[0]['volunteer_id'],)
-                );$_fal="Record inserted";
+                );
 
                 $_SESSION['success'] = "Record inserted";
                 header('Location: ../login/volunteerLogin.php');

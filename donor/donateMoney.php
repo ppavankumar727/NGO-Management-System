@@ -51,7 +51,7 @@ if ((isset($_POST['donation']))){
 ?>
 
     <form  class="form-signin" method="post">
-    <h1 class="h3 mb-3 font-weight-normal">Enter Your Details</h1>
+    <h1 class="h3 mb-3 font-weight-normal">Enter Amount To Donate</h1>
 
         <p> Donation Amount :
             <input type="number" value=0 name="donation"/></p>
