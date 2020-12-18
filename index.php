@@ -32,11 +32,7 @@ else if(isset($_SESSION['admin_id'])){
 
 }
 else if(isset($_SESSION['donor_id'])){
-    require_once "donorIndex.php";
-   
-    echo "<a href='donor/donateitems.php'>Items</a>";
-    echo "<br>";
-    
+    require_once "donorIndex.php";  
 }
 else {
     require_once "./navbar.php";

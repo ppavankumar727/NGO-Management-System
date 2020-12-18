@@ -31,8 +31,7 @@ if ( isset($_POST['username'])  ) {
                 header('Location: donorSignup.php');
                 return;
             }
-        $stmt = $pdo->prepare('INSERT INTO volunteer
-        (name,email,intrests,dob ,city_id,phone) VALUES ( :nm, :em, :inn, :db, :ci, :ph)');
+        $stmt = $pdo->prepare('INSERT INTO volunteer(name,email,intrests,dob ,city_id,phone) VALUES ( :nm, :em, :inn, :db, :ci, :ph)');
             $stmt->execute(array(
             ':nm' => $_POST['name'],
             ':em' => $_POST['email'],
@@ -80,22 +79,26 @@ $rows = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Volunteer SIGNUP</title>
+    <?php include("bootstrap.php"); ?>
+
 </head>
-<body>
+<body class="text-center">
 <?php 
 if(isset($_SESSION['error'])){
     echo $_SESSION['error'];
     unset($_SESSION['error']);
 }
 ?>
-    <form method="post">
+    <form method="post" class="form-signin">
+    <img class="mb-4" src="../images/index/logo.png" alt="" width="72" height="72">
+        <h3 class="h3 mb-3 font-weight-normal">Volunteer SIGNUP</h3>  
         <p>	username:
-            <input type="text" name="username" size="60"/></p>
+            <input type="text" name="username" size="30"/></p>
         <p>	password:
-            <input type="password" name="password" size="60"/></p>
+            <input type="password" name="password" size="30"/></p>
         <p>	name:
-            <input type="text" name="name" size="60"/></p>
+            <input type="text" name="name" size="30"/></p>
         <p>email:
             <input type="email" name="email"/></p>
         <p>address:
@@ -114,8 +117,10 @@ if(isset($_SESSION['error'])){
                 } 
             ?>
             </select>
-            <input type="submit" value="Submit">
-            <input type="submit" name="cancel" value="Cancel">
+            <br>
+            <br>
+            <input type="submit"  class="btn btn-lg btn-primary btn-bloc" value="Submit">
+            <input type="submit"  class="btn btn-lg btn-primary btn-bloc" name="cancel" value="Cancel">
     </form>
 </body>
 </html>

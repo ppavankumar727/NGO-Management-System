@@ -40,7 +40,7 @@ if ( isset($_POST['username'])  ) {
             ':add' => $_POST['address'],
             ':ci' => $_POST['city'],
             ':ph' => $_POST['phone'])
-            );$_fal="Record inserted";
+            );
     
 
             $stmt3 = $pdo->query("SELECT * FROM `donor` WHERE `donor_id`= (SELECT MAX(`donor_id`) FROM `donor`)");
@@ -79,9 +79,11 @@ $rows = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DONOR SIGNUP</title>
+    <?php include("bootstrap.php"); ?>
+
 </head>
-<body>
+<body class="text-center">
 <?php 
 if(isset($_SESSION['error'])){
     echo $_SESSION['error'];
@@ -90,13 +92,16 @@ if(isset($_SESSION['error'])){
 }
 ?>
 
-    <form method="post">
+    <form method="post" class="form-signin">
+    <img class="mb-4" src="../images/index/logo.png" alt="" width="72" height="72">
+        <h3 class="h3 mb-3 font-weight-normal">DONOR SIGNUP</h3>  
+
         <p>	username:
-            <input type="text" name="username" size="60"/></p>
+            <input type="text" name="username" size="30"/></p>
         <p>	password:
-            <input type="password" name="password" size="60"/></p>
+            <input type="password" name="password" size="30"/></p>
         <p>	name:
-            <input type="text" name="name" size="60"/></p>
+            <input type="text" name="name" size="30"/></p>
         <p>email:
             <input type="email" name="email"/></p>
         <p>address:
@@ -113,8 +118,10 @@ if(isset($_SESSION['error'])){
             } 
             ?>
             </select>
-            <input type="submit" value="Submit">
-            <input type="submit" name="Cancel" value="Cancel">
+            <br>
+            <br>
+            <input type="submit"  class="btn btn-lg btn-primary btn-bloc" value="Submit">
+            <input type="submit"  class="btn btn-lg btn-primary btn-bloc" name="Cancel" value="Cancel">
     </form>
 </body>
 </html>

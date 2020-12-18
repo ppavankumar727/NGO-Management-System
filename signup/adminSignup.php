@@ -81,9 +81,11 @@ $rows = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ADMIN SIGNUP</title>
+    <?php include("bootstrap.php"); ?>
+
 </head>
-<body>
+<body  class="text-center">
 
 <?php 
 if(isset($_SESSION['error'])){
@@ -92,13 +94,16 @@ if(isset($_SESSION['error'])){
 
 }
 ?>
-    <form method="post">
+    <form method="post" class="form-signin">
+    <img class="mb-4" src="../images/index/logo.png" alt="" width="72" height="72">
+        <h3 class="h3 mb-3 font-weight-normal">Admin SIGNUP</h3>  
+
         <p>	username:
-            <input type="text" name="username" size="60"/></p>
+            <input type="text" name="username" size="30"/></p>
         <p>	password:
-            <input type="password" name="password" size="60"/></p>
+            <input type="password" name="password" size="30"/></p>
         <p>	name:
-            <input type="text" name="name" size="60"/></p>
+            <input type="text" name="name" size="30"/></p>
         <p>email:
             <input type="email" name="email"/></p>
         <p>phone:
@@ -113,8 +118,10 @@ if(isset($_SESSION['error'])){
             } 
             ?>
             </select>
-            <input type="submit" value="Submit">
-            <input type="submit" name="cancel" value="Cancel">
+            <br>
+            <br>
+            <input type="submit"  class="btn btn-lg btn-primary btn-bloc" value="Submit">
+            <input type="submit"  class="btn btn-lg btn-primary btn-bloc" name="cancel" value="Cancel">
     </form>
 </body>
 </html>
