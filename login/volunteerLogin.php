@@ -11,7 +11,6 @@ if ( isset($_POST['username'])) {
         $rows2 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
         if(count($rows2)>=1){
            $_SESSION['volunteer_id']=$rows2[0]['volunteer_id'];
-           $_SESSION['role']= 3;
            header("Location:../index.php");
            return;
         } else {

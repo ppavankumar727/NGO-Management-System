@@ -16,6 +16,9 @@
         ?><span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item ">
+        <a class="nav-link" href="update/donorUpdate.php">Edit Profile<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item ">
         <a class="nav-link" href="logout.php">Logout<span class="sr-only">(current)</span></a>
       </li>
     </ul>

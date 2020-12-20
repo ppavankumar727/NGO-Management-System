@@ -16,6 +16,9 @@
         ?><span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item ">
+        <a class="nav-link" href="update/volunteerUpdate.php">Edit Profile<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item ">
         <a class="nav-link" href="logout.php">Logout<span class="sr-only">(current)</span></a>
       </li>
     </ul>
@@ -71,7 +74,7 @@
                 echo "<tr class=''>";
                 echo "<th scope='row' class=''>".$count."</th>";
                 echo "<td class=''>".htmlentities($row['task'])."</td>";
-                echo("<td class='' > <a href='volunteer/deleteTask.php?task_id=".$row['task_id']."'>Remove Task</a></td>");
+                echo("<td  > <a class='btn btn-primary btn-m' href='volunteer/deleteTask.php?task_id=".$row['task_id']."'>Remove Task</a></td>");
                 echo "</tr>";
               $count++;
               }

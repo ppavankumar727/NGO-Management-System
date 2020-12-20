@@ -16,6 +16,9 @@
         ?><span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item ">
+        <a class="nav-link" href="update/adminUpdate.php">Edit Profile<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item ">
         <a class="nav-link" href="logout.php">Logout<span class="sr-only">(current)</span></a>
       </li>
     </ul>
@@ -55,7 +58,7 @@
                 echo "<th scope='row' class=''>".$count."</th>";
                 echo "<td class=''>".htmlentities($row['name'])."</td>";
                 echo "<td class='' >".htmlentities($row['donationS'])." </td>";
-                echo("<td class='' > <a href='admin/delete.php?donor_id=".$row['donor_id']."'>Remove Donor</a></td>");
+                echo("<td class='' > <a class='btn btn-primary btn-sm' href='admin/delete.php?donor_id=".$row['donor_id']."'>Remove Donor</a></td>");
                 echo "</tr>";
               $count++;
               }
@@ -83,7 +86,7 @@
                 echo "<th scope='row' class=''>".$count."</th>";
                 echo "<td class=''>".htmlentities($row['name'])."</td>";
                 echo "<td class='' >".htmlentities($row['donationS'])." </td>";
-                echo("<td class='' > <a href='admin/delete.php?donor_id=".$row['donor_id']."'>Remove Donor</a></td>");
+                echo("<td class='' > <a class='btn btn-primary btn-sm' href='admin/delete.php?donor_id=".$row['donor_id']."'>Remove Donor</a></td>");
                 echo "</tr>";
               $count++;
               }
@@ -119,7 +122,7 @@
                 echo "<th scope='row' class=''>".$count."</th>";
                 echo "<td class=''>".htmlentities($row['name'])."</td>";
                 echo "<td class='' >".htmlentities($row['donationS'])." </td>";
-                echo("<td class='' > <a href='admin/delete.php?donor_id=".$row['donor_id']."'>Remove Donor</a></td>");
+                echo("<td class='' > <a class='btn btn-primary btn-sm' href='admin/delete.php?donor_id=".$row['donor_id']."'>Remove Donor</a></td>");
                 echo "</tr>";
               $count++;
               }
@@ -147,7 +150,7 @@
                 echo "<th scope='row' class=''>".$count."</th>";
                 echo "<td class=''>".htmlentities($row['name'])."</td>";
                 echo "<td class='' >".htmlentities($row['donationS'])." </td>";
-                echo("<td class='' > <a href='admin/delete.php?donor_id=".$row['donor_id']."'>Remove Donor</a></td>");
+                echo("<td class='' > <a class='btn btn-primary btn-sm' href='admin/delete.php?donor_id=".$row['donor_id']."'>Remove Donor</a></td>");
                 echo "</tr>";
               $count++;
               }
