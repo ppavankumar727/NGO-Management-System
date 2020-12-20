@@ -62,7 +62,7 @@ if(isset($_SESSION['error'])){
 
     <form method="post" class="form-signin">
     <img class="mb-4" src="../images/index/logo.png" alt="" width="72" height="72">
-        <h3 class="h3 mb-3 font-weight-normal">Edit Donor Your Profile</h3>  
+        <h3 class="h3 mb-3 font-weight-normal">Edit Your Donor Profile</h3>  
 
         <p>	name:
             <input type="text" name="name" value="<?= $name ?>" size="30"/></p>
