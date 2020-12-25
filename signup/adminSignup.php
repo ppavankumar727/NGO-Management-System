@@ -88,11 +88,12 @@ $rows = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 <body  class="text-center">
 
 <?php 
-if(isset($_SESSION['error'])){
-    echo $_SESSION['error'];
-    unset($_SESSION['error']);
-
-}
+    if(isset($_SESSION['error'])){
+        echo '<div class="alert alert-danger" role="alert">';
+        echo $_SESSION['error'];
+        unset($_SESSION['error']);
+        echo '</div>';
+    }
 ?>
     <form method="post" class="form-signin">
     <img class="mb-4" src="../images/index/logo.png" alt="" width="72" height="72">
