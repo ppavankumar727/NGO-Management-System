@@ -26,6 +26,21 @@
 </nav>
 
 <div class="container  rounded"> 
+  <?php 
+      if(isset($_SESSION['success'])){
+        echo '<div class="row alert alert-success" role="alert">';
+        echo $_SESSION['success'];
+        unset ($_SESSION['success']);
+        echo '</div>' ;
+    }
+
+    if(isset($_SESSION['error'])){
+        echo '<div class="row alert alert-danger" role="alert">';
+        echo $_SESSION['error'];
+        unset($_SESSION['error']);
+        echo '</div>';
+    }
+  ?>
   <div>
     <?php 
      $stmt3 = $pdo->query("SELECT SUM(donationS)FROM ngo_account");
