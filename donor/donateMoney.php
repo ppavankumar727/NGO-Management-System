@@ -15,6 +15,7 @@ if ((isset($_POST['donation']))){
 
         $stmt = $pdo->query("UPDATE `ngo_account`
         SET `donationS` = `donationS` + ".$_POST['donation']." WHERE `donor_id` = '".$_SESSION['donor_id']."'");
+          $_SESSION['success']="Donated Rs :".$_POST['donation'];
             header('Location: ../index.php');
             return;
        
