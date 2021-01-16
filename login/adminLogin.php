@@ -6,7 +6,7 @@ if(isset($_POST['cancel'])){
     return;
 }
 if ( isset($_POST['username'])) {
-    if((strlen($_POST['username'])>0) && (strlen($_POST['password'])>=0)){
+    if((strlen($_POST['username'])>0) && (strlen($_POST['password'])>0)){
         $stmt3 = $pdo->query("SELECT `admin_id` FROM `admin_login` WHERE USERNAME = '".$_POST['username']."' AND PASSWORD ='".$_POST['password']."'");
         $rows2 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
         if(count($rows2)>=1){
