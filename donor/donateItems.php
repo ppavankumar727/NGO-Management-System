@@ -19,7 +19,7 @@ if ((isset($_POST['item']))){
             ':did' => $_SESSION['donor_id']
             )
             );
-            $_SESSION['success'] = "Record inserted";
+            $_SESSION['success'] = "Item inserted";
             header('Location: ../index.php');
             return;
 
