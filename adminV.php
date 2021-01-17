@@ -19,6 +19,9 @@
         <a class="nav-link" href="update/adminUpdate.php">Edit Profile<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item ">
+        <a class="nav-link" href="admin.php">Donors<span class="sr-only">(current)</span></a>
+      </li>      
+      <li class="nav-item ">
         <a class="nav-link" href="logout.php">Logout<span class="sr-only">(current)</span></a>
       </li>
     </ul>
@@ -44,7 +47,7 @@
 
   <div class = "row ">
     <div class="col-6 "><h3>Runnnig Tasks</h3></div>
-    <div class="col-6"><h3>Tasks You Are Conducting  <a class="btn btn-primary btn-lg" href="volunteer/tasks.php" role="button">Add More Tasks</a></h3></div>
+    <div class="col-6"><h3>Volunteers</h3></div>
   </div>
   <div class = "row ">
     <div class="col-6">

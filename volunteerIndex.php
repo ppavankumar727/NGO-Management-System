@@ -89,7 +89,6 @@
                 echo "<tr class=''>";
                 echo "<th scope='row' class=''>".$count."</th>";
                 echo "<td class=''>".htmlentities($row['task'])."</td>";
-                echo("<td  > <a class='btn btn-primary btn-m' href='volunteer/deleteTask.php?task_id=".$row['task_id']."'>Remove Task</a></td>");
                 echo "</tr>";
               $count++;
               }

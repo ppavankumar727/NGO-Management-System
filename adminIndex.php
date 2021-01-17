@@ -21,6 +21,9 @@
         <a class="nav-link" href="update/adminUpdate.php">Edit Profile<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item ">
+        <a class="nav-link" href="adminVolunteer.php">Volunteers<span class="sr-only">(current)</span></a>
+      </li>      
+      <li class="nav-item ">
         <a class="nav-link" href="logout.php">Logout<span class="sr-only">(current)</span></a>
       </li>
     </ul>
