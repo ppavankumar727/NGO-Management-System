@@ -25,8 +25,8 @@ if ( isset($_POST['username'])  ) {
                 header('Location: donorSignup.php');
                 return;
             }
-            $stmt5 = $pdo->query("SELECT `phone` FROM `donor` WHERE `phone`= ".$_POST['phone'].";");
-            $rows5 = $stmt5->fetchAll(PDO::FETCH_ASSOC);
+            $stmt6 = $pdo->query("SELECT `phone` FROM `donor` WHERE `phone`= ".$_POST['phone']);
+            $rows6 = $stmt6->fetchAll(PDO::FETCH_ASSOC);
             if(count($rows5)>0){
                 $_SESSION['error'] = "phone number Already Exist Chose a different phone";
                 header('Location: donorSignup.php');

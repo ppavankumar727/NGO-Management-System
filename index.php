@@ -20,7 +20,7 @@ if(isset($_SESSION['volunteer_id'])){
         require_once "volunteerIndex.php";
 }
 else if(isset($_SESSION['admin_id'])){
-    require_once "./adminIndex.php";
+    require_once "./adminIndex2.php";
 
 }
 else if(isset($_SESSION['donor_id'])){

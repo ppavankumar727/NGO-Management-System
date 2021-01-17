@@ -12,7 +12,7 @@ if ( isset($_POST['username'])  ) {
         $rows5 = $stmt5->fetchAll(PDO::FETCH_ASSOC);
         if(count($rows5)>0){
             $_SESSION['error'] = "Username Already Exist Chose a different username";
-            header('Location: donorSignup.php');
+            header('Location: volunteerSignup.php');
             return;
         }
     if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['intrests'])&&isset($_POST['date'])&&isset($_POST['city'])&&isset($_POST['phone'])){
@@ -21,14 +21,14 @@ if ( isset($_POST['username'])  ) {
             $rows5 = $stmt5->fetchAll(PDO::FETCH_ASSOC);
             if(count($rows5)>0){
                 $_SESSION['error'] = "email Already Exist Chose a different email";
-                header('Location: donorSignup.php');
+                header('Location: volunteerSignup.php');
                 return;
             }
             $stmt5 = $pdo->query("SELECT `phone` FROM `volunteer` WHERE `phone`= ".$_POST['phone'].";");
             $rows5 = $stmt5->fetchAll(PDO::FETCH_ASSOC);
             if(count($rows5)>0){
                 $_SESSION['error'] = "phone number Already Exist Chose a different phone";
-                header('Location: donorSignup.php');
+                header('Location: volunteerSignup.php');
                 return;
             }
         $stmt = $pdo->prepare('INSERT INTO volunteer(name,email,intrests,dob ,city_id,phone) VALUES ( :nm, :em, :inn, :db, :ci, :ph)');

@@ -2,9 +2,6 @@
 <?php 
 session_start();
 require_once "../pdo.php";
-if(!isset($_SESSION['volunteer_id'])){
-    die("Login first");
-}
 if(!isset($_GET['task_id'])){
     die("No param");
 }
