@@ -21,7 +21,7 @@ Can Donate
 * Manage Transactions
 * Donate Items
 
-### 3.  Clerk
+### 3. Volunteer
 The Volunteer who is Conducting Tasks
 * Record Tasks
 * Add Tasks
