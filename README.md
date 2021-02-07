@@ -8,7 +8,7 @@ Simple NGO Management System built with  php as a Mini Project for a college Min
 * Manage Donors
 * Admin Donors Volunteers and their roles
 * Record Transactions Donated Money
-* Donate payment 
+* Donate Money 
 * Add Volunteer Tasks
 * View Tasks
 
