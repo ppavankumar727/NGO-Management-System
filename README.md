@@ -31,7 +31,6 @@ The Volunteer who is Conducting Tasks
 * browser
 
 # Quick Guide
-
 1. Clone this repo to your documents root e.g under `c:\xampp\htdocs\` on windows
 2. Import the `ngo.sql` file to your database. (You can create a database called ngo using phpmyadmin and import this file into it)
 3. open `pdo.php` file and enter your database settings
