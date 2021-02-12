@@ -1,7 +1,7 @@
 NGO Management System
 =====
 
-Simple NGO Management System built with  php as a Mini Project for a college Mini Project
+Simple NGO Management System built with  php as a Mini Project for deeper understandin of how databases are managed
 
 ## Features
 * Login ,Signup ,Edit  
