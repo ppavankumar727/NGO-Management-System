@@ -10,7 +10,7 @@ Simple NGO Management System built with  php as a Mini Project for deeper unders
 * Record Transactions Donated Money
 * Donate Money 
 * Add Volunteer Tasks
-* View Tasks
+* View Tasks of volunteers
 
 ## Roles
 ### 1.  Admin
