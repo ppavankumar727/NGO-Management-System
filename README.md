@@ -24,7 +24,7 @@ Can Donate
 ### 3. Volunteer
 The Volunteer who is Conducting Tasks
 * Record Tasks
-* Add Tasks
+* Add Task
 
 # Software Requirements
 * xampp
