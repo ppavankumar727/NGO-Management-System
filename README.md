@@ -6,6 +6,7 @@ Technologies used
 * BOOTSTRAP
 * PHP
 * MYSQL
+* javaScript
 
 ## Features
 * Login ,Signup ,Edit  
